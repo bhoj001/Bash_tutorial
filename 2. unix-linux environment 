@@ -1,0 +1,107 @@
+==========Unix/Linux environment===============
+
+A)Printing Files 
+    i)The pr Command:
+        pr: The pr command does minor formatting of files on the terminal screen or for a printer. 
+        For example, if you have a long list of names in a file, you can format it onscreen into two or more columns.
+    command :
+    $ pr option(s) filename(s)
+    
+    options:
+    -k => Produces k columns of output,
+    -d => Double-spaces the output (not on all pr versions),
+    -h "header" => Takes the next item as a report header, etc
+    
+    ii) The lpstat and lpq Commands
+
+    The lpstat command shows what's in the printer queue: request IDs, owners, file sizes, when the
+    jobs were sent for printing, and the status of the requests.
+
+    Use lpstat -o if you want to see all output requests other than just your own. Requests are shown in 
+    the order they'll be printed 
+
+    iii) The cancel and lprm Commands
+
+    The cancel command terminates a printing request from the lp command. The lprm command terminates all lpr requests.
+    You can specify either the ID of the request (displayed by lp or lpq) or the name of the printer.
+
+B) Sending Email
+    Note: to use mail you need to install mailutils : sudo apt install mailutils
+    You use the Unix mail command to send and receive mail. Here is the syntax to send an email −
+
+    $mail [-s subject] [-c cc-addr] [-b bcc-addr] to-addr
+
+    -s => Specifies subject on the command line.
+    -c => Sends carbon copies to the list of users.
+    -b => Sends blind carbon copies to list.
+
+    e.g $mail -s "Test Message" admin@gmail.com
+
+    Then you are expected to type your email message.
+
+    Hi
+
+    I am bhoj. This is a test mail
+
+    ....
+
+==========Unix/Linux -Pipes and Filters=================
+
+A) The grep Command
+    The grep command searches a file or files for lines that have a certain pattern. 
+    command syntax:
+    $grep pattern file(s)
+    eg. ls -l | grep "Aug"
+
+    options in grep command:
+    eg. ...|grep option(s) "Filter pattern"
+    $ls -l | grep -i "Jul"
+    options:
+    -i => Matches either upper or lowercase.
+    -v => Prints all lines that do not match pattern.
+    -c => Prints only the count of matching lines.
+    -l => Prints only the names of files with matching lines (letter "l")
+    -n => Prints the matched line and its line number.
+
+==========Unix / Linux - Processes Management==============
+
+A) Listing Running Processes
+    $ps => list process 
+    $ps -f => list process -f means full shows more list 
+
+B) Stoping the process
+    $kill processID
+    Note: 
+    the kill command terminates the first_one process. If a process ignores a regular kill 
+    command, you can use kill -9 followed by the process ID as follows −
+
+    $kill -9 6738
+    Terminated
+
+    #Parent and Child Processes
+    --------------------------
+
+    Each unix process has two ID numbers assigned to it: The Process ID (pid) and the Parent process ID (ppid).
+
+    #Zombie and Orphan Processes
+    ---------------------------
+
+    Normally, when a child process is killed, the parent process is updated via a SIGCHLD signal. 
+    Then the parent can do some other task or restart a new child as needed. However, sometimes the parent 
+    process is killed before its child is killed. In this case, the "parent of all processes," the init 
+    process, becomes the new PPID (parent process ID). In some cases, these processes are called orphan processes.
+
+    #Daemon Processes
+    ------------------
+
+    Daemons are system-related background processes that often run with the permissions of
+    root and services requests from other processes.
+
+    A daemon has no controlling terminal. It cannot open /dev/tty. If you do
+    a "ps -ef" and look at the tty field, all daemons will have a ? for the tty.
+
+    #The top Command
+
+    The top command is a very useful tool for quickly showing processes sorted by various criteria.
+    command:
+    $top 

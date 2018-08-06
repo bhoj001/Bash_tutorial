@@ -1,0 +1,38 @@
+===============Unix / Linux - Network Communication Utilities===========
+A) Ping Utility 
+    command :
+    $ ping hostname or ip-address
+    e.g ping google.com 
+
+B) ftp Utility
+    Here, ftp stands for File Transfer Protocol. 
+    This utility helps you upload and download your file from one computer to another computer.
+    The ftp utility has its own set of Unix-like commands. These commands help you perform tasks such as −
+
+    Connect and login to a remote host.
+
+    Navigate directories.
+
+    List directory contents.
+
+    Put and get files.
+
+    Transfer files as ascii, ebcdic or binary.
+
+    command:
+    $ ftp hostname or ipaddress
+C) The telnet Utility
+
+    There are times when we are required to connect to a remote Unix machine and work on that machine 
+    remotely. Telnet is a utility that allows a computer user at one site to make a connection, 
+    login and then conduct work on a computer at another site.
+
+D) The finger Utility
+
+    The finger command displays information about users on a given host. The host can be either local or remote.
+    command: 
+    $ finger
+    $ finger olebhoj =>  finger with user name
+
+
+

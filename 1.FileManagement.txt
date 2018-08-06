@@ -1,0 +1,123 @@
+====1. Linux file management===
+
+A) Listing Files:
+    commands:
+    a) $ls  
+    b) $ls -l 
+
+B) Metacharacters
+
+    Metacharacters have a special meaning in Unix. For example, * and ? are metacharacters.
+    We use * to match 0 or more characters, a question mark (?) matches with a single character.
+
+    commands:
+    a) $ls ch*.doc  => search for file that starts with ch and end with .doc
+       eg. ls images/ed*.jpg
+    b) ls -a => show hidden files 
+        eg. ls -l -a => show hidden files and list in vertical format
+
+C) Creating Files
+    
+    You can use the vi editor to create ordinary files on any Unix system. 
+    command: 
+
+    $ vi filename
+
+    note: if a file exits 'vi filename' will open it in edit mode
+
+D) Display content of a file
+
+    $cat filename 
+
+    eg. cat -b index.html => -b option shows line number in cat command 
+
+E) Counting Words in a File
+
+    $wc filename
+    eg wc index.html
+    output:268  749 9958 index.html
+    Here, first is line number, second number of words, third no. of bytes in the file, fourth file name
+
+F) Copying Files 
+    To make a copy of a file use the cp command. 
+    command:
+    $ cp source_file destination_file
+    eg. cp index.html /home/Olebhoj/Desktop/
+
+G) Renaming Files
+    
+    To change the name of a file, use the mv command. Following is the basic syntax −
+    command: 
+    $ mv old_file new_file
+        eg. mv index.html nishant.html
+
+H)Deleting Files
+
+    To delete an existing file, use the rm command. Following is the basic syntax −
+    command:
+    $ rm filename
+        eg. rm -rf index.html =>  rm -rf = remove refactor command
+
+
+
+=============2. Linux directories====================
+
+A) Home directory
+    $cd ~
+B) absolute path
+    eg. /etc/passwd/
+C) Current working directory
+    $ pwd 
+
+D) Creating Directories
+    $ mkdir dirname
+
+    #creating parent directory
+    $ mkdir -p /tmp/bhoj/test => -p creates all the necesary parent directory temp >bhoj>test
+        eg. mkdir -p ./tmp/bhoj/test => creates directories in parent directories\
+
+E) Removing directories
+    $ rmdir dirname
+
+F) Renaming directory
+    $ mv olddir newdir
+
+G) The directories . (dot) and .. (dot dot)
+
+    The filename . (dot) represents the current working directory; and the filename .. (dot dot) represents 
+    the directory one level above the current working directory, often referred to as the parent directory.
+
+=============3. File access permission=======================
+
+A) The Permission Indicators 
+    $ ls -l 
+    eg output : drwxrwxr-x 20 olebhoj olebhoj  4096 Aug  2 09:45 Folder 
+    => drwxrwxr = owner has delete ,read, writ, execute permission ,-x only execute command to the group it belongs to
+
+B) Changing Permissions
+    To change the file or the directory permissions, you use the chmod (change mode) command
+    eg. chmod 777 nishant.html => 777 means all permission
+
+    Permission tables
+    Number 	Octal Permission Representation 	                        Ref
+        0 	No permission 	                                            ---
+        1 	Execute permission 	                                        --x
+        2 	Write permission 	                                        -w-
+        3 	Execute and write permission: 1 (execute) + 2 (write) = 3 	-wx
+        4 	Read permission 	                                        r--
+        5 	Read and execute permission: 4 (read) + 1 (execute) = 5 	r-x
+        6 	Read and write permission: 4 (read) + 2 (write) = 6 	    rw-
+        7 	All permissions: 4 (read) + 2 (write) + 1 (execute) = 7 	rwx
+
+
+    other examples
+    $ chmod 755 filename
+    $ chmod 043 filename_or_directoryname
+
+C) Changing Owners and Groups 
+
+    -Changing Ownership 
+    $ chown user filelist  => eg. chown Olebhoj testfile
+
+    -Changing Group Ownership
+    $ chgrp group filelist

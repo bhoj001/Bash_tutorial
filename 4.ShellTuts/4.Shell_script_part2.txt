@@ -1,0 +1,63 @@
+============Unix / Linux - Using Shell Arrays============
+
+    A) array operations
+    array syntax
+    array_name[index]=value
+
+    As an example, the following commands −
+
+    NAME[0]="Zara"
+    NAME[1]="Qadir"
+    NAME[2]="Mahnaz"
+    NAME[3]="Ayan"
+    NAME[4]="Daisy"
+
+    Accessing Array Values
+
+    After you have set any array variable, you access it as follows −
+    ${array_name[index]}
+
+==========Unix / Linux - Shell Basic Operators==================
+
+There are various operators supported by each shell. We will discuss in detail about Bourne shell (default shell) in this chapter.
+
+We will now discuss the following operators −
+
+    Arithmetic Operators
+    Relational Operators
+    Boolean Operators
+    String Operators
+    File Test Operators
+
+    eg.
+    #!/bin/sh
+
+    val=`expr 2 + 2`
+    echo "Total value : $val"
+
+
+========Unix / Linux - Shell Decision Making============
+
+    Unix Shell supports conditional statements which are used to perform different actions based on 
+    different conditions. We will now understand two decision-making statements here −
+
+        The if...else statement
+
+        The case...esac statement
+
+
+        if...fi statement
+        if...else...fi statement
+        if...elif...else...fi statement
+
+
+        Note: The case...esac statement in the Unix shell is very similar to the switch...case statement 
+        we have in other programming languages like C or C++ and PERL, etc.
+
+===========Unix / Linux - Shell Loop Types===============
+
+
+    The while loop
+    The for loop
+    The until loop
+    The select loop
